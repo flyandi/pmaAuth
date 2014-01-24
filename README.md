@@ -116,7 +116,7 @@ Under Linux you can also execute the shell script:
 
 Action			| Call													| Example
 ---				| ---													| ---
-Add User		| `php pma.php add <username> <password> <group>`		| `php pma.php add example 123456 default
+Add User		| `php pma.php add <username> <password> <group>`		| `php pma.php add example 123456 default`
 Change Password	| `php pma.php passwd <username> <password>`			| `php pma.php passwd example 654321`
 Change Group	| `php pma.php group <username> <group>`				| `php pma.php group example full`
 Delete User		| `php pma.php revoke <username>`						| `php pma.php revoke example`
