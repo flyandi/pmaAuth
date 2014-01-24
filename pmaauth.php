@@ -1,21 +1,21 @@
 <?php
 /* 
-	pmaAuth for phpMyAdmin
-	
-	A simple user management extension for phpMyAdmin that allows to secure phpMyAdmin independent from MySQL users.
-
-	This program is protected by copyright laws and international treaties.
-	Unauthorized reproduction or distribution of this program, or any 
-	portion thereof, may result in serious civil and criminal penalties.
-	
-	This software is released under the GPLv3 License. (http://www.gnu.org/licenses/gpl.txt)
-
-	@git		https://github.com/flyandi/pmaAuth
-	@author		Andreas Gulley (http://github.com/flyandi)
-	@package 	pmaAuth
-	@module		CLI Manager
-	@version	1.0
-*/
+ * pmaAuth for phpMyAdmin
+ * 
+ * A simple user management extension for phpMyAdmin that allows to secure phpMyAdmin independent from MySQL users.
+ * 
+ * This program is protected by copyright laws and international treaties.
+ * Unauthorized reproduction or distribution of this program, or any 
+ * portion thereof, may result in serious civil and criminal penalties.
+ * 
+ * This software is released under the GPLv3 License. (http://www.gnu.org/licenses/gpl.txt)
+ * 
+ * @git		https://github.com/flyandi/pmaAuth
+ * @author		Andreas Gulley (http://github.com/flyandi)
+ * @package 	pmaAuth
+ * @module		CLI Manager
+ * @version	1.0
+ */
 
 # (constants)
 define("PMA_CONFIG", dirname(__FILE__)."/pmaauth.conf");
