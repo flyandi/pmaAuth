@@ -35,7 +35,7 @@ Ok, once you made a decision, let's install pmaAuth:
 
 ```php
 <?php
-include("../pmaauth/pmaauth.php");
+include("../pmaAuth/pmaauth.php");
 return;
 ```
 OR keep your existing config.inc.php and just add the lines above right after the `<?php` tag.
