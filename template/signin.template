@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta name="robots" content="index, follow, noodp, noydir" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	<title>{pma:title}</title>
+	<style>	
+		* {padding:0;margin:0}
+		body {background:#f1f1f1;font-family:'Ubuntu', Arial, sans-serif;font-size:14px}
+		.pma-box {width:400px;margin:5em auto;background:#fafafa;box-shadow:#c0c0c0 0 2px 3px;}
+		.pma-box .pma-box-padding {padding:10px}
+		.pma-box .pma-box-top {background:#f7f7f7;border-bottom:1px solid #e8e8e8;text-shadow:#fff 1px 1px 0;color:#404040;}
+		.pma-box .pma-box-top h1 {letter-spacing:-1px;font-size:1.5em;color:#505050;margin-bottom:5px}
+		.pma-form div {margin-top:10px}
+		.pma-form input {width:280px;border:1px solid #e0e0e0;background:#fff;color:#404040;padding:5px;font-family:'Ubuntu', Arial, sans-serif;font-size:15px;}
+		.pma-form label {width:100px;display:inline-block;color:#555;}
+		.pma-buttons button {cursor:pointer;display: inline-block;padding:5px 10px;color:#fff;font-weight:bold;text-shadow:#000 1px 1px 0px;border: 1px solid #202020;background:#404040}
+		.pma-buttons button:hover {background:#606060}
+		.pma-notice span {display:block;}
+		.pma-notice .pma-notice-error {margin:10px;margin-bottom:0;padding:5px;background:#FFF0F0;border:1px solid #FFB9B9;color:#660000;}
+		.pma-notice .pma-notice-warn {margin:10px;margin-bottom:0;padding:5px;background:#FFFFCC;border:1px solid #FFDC93;}
+	</style>
+</head>
+<body>
+	<form method="post" action="#" autocomplete="off">
+		<div class="pma-box">
+			<div class="pma-box-top pma-box-padding">
+				<h1>{pma:header}</h1>
+				<p>{pma:message}</p>
+			</div>
+			<div class="pma-notice">
+				<span class="pma-notice-{pma:noticetype}">
+					{pma:notice}
+				</span>
+			</div>	
+			<div class="pma-form pma-box-padding">
+				<div><label for="username">Username</label><input type="text" name="username" value="{pma:username}" /></div>
+				<div><label for="password">Password</label><input type="password" name="password" autocomplete="off" /></div>
+			</div>
+			<div class="pma-buttons pma-box-padding">
+				<button type="submit">Login</button>
+			</div>
+		</div>	
+	</form>
+</body>
+</html>
+	
