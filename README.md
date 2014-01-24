@@ -27,7 +27,7 @@ Here is an example how it could look:
  /var/www/html/db/pmaauth    -> Location of pmaAuth    
 ```
 
-Once you figured that out and made a decision, let's get started:
+Ok, once you made a decision, let's install pmaAuth:
 
 1) Download or clone pmaAuth from GitHub [https://github.com/flyandi/pmaAuth]
 
@@ -38,13 +38,42 @@ Once you figured that out and made a decision, let's get started:
 include("../pmaauth/pmaauth.php");
 return;
 ```
-OR keep your existing config.inc.php and just add the lines above right after the <?php tag.
+OR keep your existing config.inc.php and just add the lines above right after the `<?php` tag.
 
 **Again: I remind you to backup your config.inc.php before doing this**
 
 3) That's it. If you go to your phpMyAdmin you should be greeted with a new login screen.
 
 
-## Setup Users
+## Configuration
+
+Next we need to configure pmaAuth. All settings are maintained through a JSON file called `pmaauth.conf`. Below is a default with all options: 
+
+```json
+{
+	"sessionname": "pmaAuthSession",
+	"sessiontimeout": 60,
+	"sessionpath": "/",
+	"sessiondomain": "www.example.com",
+	"sessionsecure": false,
+	"sessionhttp": false,
+	"html": {
+		"title": "pmaAuth Authorization for phpMyAdmin",
+		"header": "Database Management",
+		"message": "Please enter your credentials to continue."
+	},
+	"groups": {
+		"default": "config.inc.php"
+	}
+}
+```
+
+Most settings should be self explanatory and you can also do some basic customization within the `html` key. All `session` keys reflect the internal session management and the `sessiontimeout` is in `minutes`. 
+
+Important is the `groups` key that I will discuss in the next chapter.
+
+
+## Setting up Security Groups
+
 
 
