@@ -4,5 +4,5 @@
 */
 
 // Make sure to include the correct path to the pmaauth.php here
-include("../pmaauth/pmaauth.php");
+include("../pmaAuth/pmaauth.php");
 return;
