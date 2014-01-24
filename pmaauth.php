@@ -7,10 +7,13 @@
 		This program is protected by copyright laws and international treaties.
 		Unauthorized reproduction or distribution of this program, or any 
 		portion thereof, may result in serious civil and criminal penalties.
+		
+		This software is released under the GPLv3 License. (http://www.gnu.org/licenses/gpl.txt)
 	
-		@author		Andy Gulley (http://github.com/flyandi)
+		@git		https://www.github.com/flyandi/pmaAuth
+		@author		Andreas Gulley (http://github.com/flyandi)
 		@package 	pmaAuth
-		@module		main
+		@module		CLI Manager
 		@version	1.0
 	*/
 	

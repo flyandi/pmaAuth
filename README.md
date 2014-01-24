@@ -75,5 +75,73 @@ Important is the `groups` key that I will discuss in the next chapter.
 
 ## Setting up Security Groups
 
+Security Groups or just Groups are the secret sauce of pmaAuth. Basically when a user is signin-in, pmaAuth will load a group specific configuration file for phpMyAdmin. All security groups are defined within the `groups` key of the configuration file.
+
+The `key` is the name of the group while the `value` points to the phpMyAdmin configuration file within the `groups/` folder of pmaAuth.
+
+Example:
+
+```json
+{
+	"groups": {
+		"example":	"example.inc.php"
+	}
+}
+```
+
+Make sure not to forget to place the actual configuration file of the group within the `groups/` folder of pmaAuth. 
+
+Configure the group configuration file for phpMyAdmin as needed. If you specify `auth-type = cookie` for phpMyAdmin you may end up with two login screens. 
+
+Usually you would add universal users with different access rights (e.g. full-access, readonly-access, etc) to your MySQL instances and create for each "access-role-user" different phpMyAdmin configuration files with hardcoded login information and assign them to security groups. Makes sense?
 
 
+## Setting up Users
+
+Now that we have setup all of our basics, we need some users. pmaAuth comes with a handy CLI manager that allows to create and modify users.
+
+Navigate to the installation folder of pmaAuth and execute the pma.php tool. 
+
+```shell
+> php pma.php <options>
+```
+
+Under Linux you can also execute the shell script:
+
+```shell
+> ./pma.sh <options>
+```
+
+### Actions
+
+Action			| Call													| Example
+---				| ---													| ---
+Add User		| `php pma.php add <username> <password> <group>`		| `php pma.php add example 123456 default
+Change Password	| `php pma.php passwd <username> <password>`			| `php pma.php passwd example 654321`
+Change Group	| `php pma.php group <username> <group>`				| `php pma.php group example full`
+Delete User		| `php pma.php revoke <username>`						| `php pma.php revoke example`
+
+You also can check if a user exists using `php pma.php test <username>`.
+
+
+## Important
+
+Make sure that the folder `sessions/` is writeable otherwise no session information can be stored and you won't be able to login. 
+
+
+## Customization
+
+If you like you can customize the login screen of pmaAuth to your needs. For basic messaging please refer to the configuration file of pmaAuth, however if you want to change colors, design, etc - you will find the template in `template/signin.template` which is pure HTML and easy to modify.
+
+Most important is that you keep the name of the two form fields intact: `username` for Username and `password` for the Password field. Otherwise, go crazy!
+
+Make sure to put external css, images, etc into public-accessible paths (like the phpMyAdmin folder) because I hope you followed my strong advice to keep pmaAuth in a non-web-accessible path.
+
+
+## Future
+
+Well I have some ideas including logging of individual users what they actually do in phpMyAdmin and create reports of important modifications such as `DELETE`, `GRANT`, etc MySQL operations. 
+
+## License
+
+This software is released under the GPLv3 License.
