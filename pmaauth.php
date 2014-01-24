@@ -11,9 +11,9 @@
  * This software is released under the GPLv3 License. (http://www.gnu.org/licenses/gpl.txt)
  * 
  * @git		https://github.com/flyandi/pmaAuth
- * @author		Andreas Gulley (http://github.com/flyandi)
- * @package 	pmaAuth
- * @module		CLI Manager
+ * @author	Andreas Gulley (http://github.com/flyandi)
+ * @package pmaAuth
+ * @module	Main
  * @version	1.0
  */
 
