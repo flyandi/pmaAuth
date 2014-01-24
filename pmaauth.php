@@ -38,6 +38,10 @@ function pmaDefault($value, $default = null) {
 	return (empty($value)||(is_string($value)&&strlen(trim($value))==0)||$value==null) ? $default : $value;
 }
 
+# (pmaSanitize)
+function pmaSanitize($s) {
+	return preg_replace("/[^A-Za-z0-9 ]/", "", $s);
+}
 
 # (configuration)
 $config = json_decode(file_get_contents(PMA_CONFIG));
@@ -86,10 +90,10 @@ if($sid = pmaGetVar(pmaDefault($config->sessionname, "pmaAuthSession"))) {
 # (login)
 if(pmaGetVar("username", false)) {
 	// process login
-	$uname = sha1(pmaGetVar("username"));
+	$uname = sha1(pmaSanitize(pmaGetVar("username")));
 	if(!is_array($users)) $users = array();
 	// check
-	if(isset($users[$uname]) && $users[$uname][0] == sha1(pmaGetVar("password"))) {
+	if(isset($users[$uname]) && $users[$uname][0] == sha1(pmaSanitize(pmaGetVar("password")))) {
 		// create session
 		$sid = md5(uniqid(rand(), true));
 		file_put_contents(PMA_SESSIONS.$sid, json_encode(array(
