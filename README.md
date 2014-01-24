@@ -128,6 +128,8 @@ You also can check if a user exists using `php pma.php test <username>`.
 
 Make sure that the folder `sessions/` is writeable otherwise no session information can be stored and you won't be able to login. 
 
+Also make sure that the file in `secure/users` is writeable.
+
 
 ## Customization
 
